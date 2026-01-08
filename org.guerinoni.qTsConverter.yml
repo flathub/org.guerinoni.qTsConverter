@@ -20,6 +20,9 @@ modules:
         url: https://github.com/guerinoni/qTsConverter
         tag: 4.5.0
         commit: cc0be910846c2e6ec254111555455394c562179c
+        x-checker-data:
+          is-main-source: true
+          type: git
       - type: patch
         path: fix-appdata.patch
     post-install:

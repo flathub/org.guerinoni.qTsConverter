@@ -1,6 +1,6 @@
 app-id: org.guerinoni.qTsConverter
 runtime: org.kde.Platform
-runtime-version: '5.14'
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 command: qTsConverter
 finish-args:
@@ -11,11 +11,14 @@ finish-args:
 modules:
   - name: qTsConverter
     config-opts:
-      - "-DCMAKE_INSTALL_PREFIX=/app"
-      - "-DCMAKE_BUILD_TYPE=Release"
+      - -DCMAKE_INSTALL_PREFIX=/app
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     buildsystem: cmake
     sources:
       - type: git
         url: https://github.com/guerinoni/qTsConverter
-        branch: 4.4.0
-        commit: "60190f8b5558496b79f8d1909c6e5d8ee5bc21bc"
+        tag: 4.5.0
+        commit: cc0be910846c2e6ec254111555455394c562179c
+      - type: patch
+        path: fix-appdata.patch
